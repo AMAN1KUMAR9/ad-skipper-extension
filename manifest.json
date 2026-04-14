@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Ad Skipper & Speed Booster",
+  "version": "1.0.0",
+  "description": "Automatically skips YouTube ads and plays them at 10x speed",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
