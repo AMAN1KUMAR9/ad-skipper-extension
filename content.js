@@ -55,7 +55,7 @@ let lastSkipClick = 0;
 function clickSkipButton() {
   // Prevent clicking too frequently
   const now = Date.now();
-  if (now - lastSkipClick < 2000) {
+  if (now - lastSkipClick < 500) {
     return false;
   }
 
@@ -155,6 +155,8 @@ function initAdSkipper() {
 
   // Observer for DOM changes (when skip button appears)
   const observer = new MutationObserver(() => {
+    // Immediately try to click skip button when DOM changes
+    clickSkipButton();
     setAdSpeed();
   });
 
