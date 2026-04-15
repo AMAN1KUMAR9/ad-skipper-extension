@@ -1,5 +1,5 @@
 // Ad Skipper & Speed Booster for YouTube
-// Automatically skips ads and plays them at 10x speed
+// Automatically skips ads and plays them at 16x speed
 
 let originalSpeed = 1;
 let originalVolume = 1;
@@ -97,7 +97,7 @@ function clickSkipButton() {
   return false;
 }
 
-// Function to set playback speed to 10x during ads
+// Function to set playback speed to 16x during ads
 function setAdSpeed() {
   const video = document.querySelector('video');
   if (!video) return;
@@ -109,13 +109,13 @@ function setAdSpeed() {
       originalSpeed = video.playbackRate || 1;
       originalVolume = video.volume;
       isAdPlaying = true;
-      console.log('Ad Skipper: ✅ Ad detected! Setting 10x speed & muting (was speed:', originalSpeed, ', volume:', originalVolume + ')');
+      console.log('Ad Skipper: ✅ Ad detected! Setting 16x speed & muting (was speed:', originalSpeed, ', volume:', originalVolume + ')');
     }
 
-    // Set to maximum speed (16x is the browser limit, but we'll try 10x)
-    if (video.playbackRate !== 10) {
-      video.playbackRate = 10;
-      console.log('Ad Skipper: Speed set to 10x');
+    // Set to maximum speed (16x is the browser limit, but we'll try 16x)
+    if (video.playbackRate !== 16) {
+      video.playbackRate = 16;
+      console.log('Ad Skipper: Speed set to 16x');
     }
 
     // Mute the ad
